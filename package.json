@@ -38,6 +38,8 @@
     "@eslint/js": "^9.39.1",
     "eslint": "^9.39.1",
     "js-yaml": "^4.1.1",
-    "tinycolor2": "^1.6.0"
+    "prettier": "^3.7.4",
+    "tinycolor2": "^1.6.0",
+    "vsce": "^2.15.0"
   }
 }
