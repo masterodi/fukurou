@@ -15,7 +15,7 @@ const build = async () => {
 
   return Promise.all([
     fs.promises.writeFile(
-      path.join(THEMES_DIR, "placeholder.json"),
+      path.join(THEMES_DIR, "fukurou.json"),
       JSON.stringify(base, null, 4)
     ),
   ]);

@@ -1,9 +1,9 @@
 $schema: vscode://schemas/color-theme
-name: Placeholder
+name: fukurou
 author: TODO
 semanticClass: theme.dracula
 semanticHighlighting: true
-placeholder:
+fukurou:
   base:
     - &BG "#211f23"
     - &FG "#b7b7ba"
@@ -97,7 +97,7 @@ colors:
   input.background: *BG # Input box background
   input.foreground: *FG # Input box foreground
   input.border: *BGDarker # Input box border
-  input.placeholderForeground: *COMMENT # Input box foreground color for placeholder text
+  input.fukurouForeground: *COMMENT # Input box foreground color for fukurou text
   inputOption.activeBorder: *PURPLE # Border color of activated options in input fields
   inputValidation.infoForeground: # Input validation foreground color for information severity
   inputValidation.infoBackground: # Input validation background color for information severity
@@ -611,7 +611,7 @@ tokenColors:
   - name: Separators (key/value, namespace, inheritance, pointer, hash, slice, etc)
     scope:
       - constant.other.symbol.hashkey punctuation.definition.constant.ruby
-      - entity.other.attribute-name.placeholder punctuation # Sass placeholder `%` symbols
+      - entity.other.attribute-name.fukurou punctuation # Sass fukurou `%` symbols
       - entity.other.attribute-name.pseudo-class punctuation
       - entity.other.attribute-name.pseudo-element punctuation
       - meta.group.double.toml

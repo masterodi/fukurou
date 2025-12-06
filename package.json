@@ -1,27 +1,38 @@
 {
-  "name": "placeholder",
-  "displayName": "placeholder",
+  "name": "fukurou",
+  "displayName": "fukurou",
   "description": "",
   "version": "0.0.1",
+  "publisher": "masterodi",
   "engines": {
     "vscode": "^1.106.1"
   },
   "categories": [
     "Themes"
   ],
+  "keywords": [
+    "fukurou",
+    "dark",
+    "theme",
+    "color-theme"
+  ],
+  "icon": "icon.png",
   "contributes": {
     "themes": [
       {
-        "label": "Placeholder",
+        "label": "fukurou",
         "uiTheme": "vs-dark",
-        "path": "./themes/placeholder.json"
+        "path": "./themes/fukurou.json"
       }
     ]
   },
   "type": "module",
   "scripts": {
     "build": "node src/scripts/build.js",
-    "dev": "node --watch-path=./src src/scripts/build.js"
+    "dev": "node --watch-path=./src src/scripts/build.js",
+    "package": "vsce package -o ./bin/fukurou.vsix",
+    "vscode:prepublish": "npm run build",
+    "vsce-publish": "vsce publish"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

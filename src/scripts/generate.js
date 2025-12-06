@@ -15,7 +15,7 @@ const __dirname = path.resolve();
 
 /**
  * @typedef {Object} Theme - Parsed theme object.
- * @prop {Record<'base'|'ansi'|'brightOther'|'other', string[]>} placeholder - Theme color variables.
+ * @prop {Record<'base'|'ansi'|'brightOther'|'other', string[]>} fukurou - Theme color variables.
  * @prop {Record<string, string|null|undefined>} colors - VSCode color mapping.
  * @prop {TokenColor[]} tokenColors - Textmate token colors.
  */
@@ -60,9 +60,7 @@ const transformSoft = (theme) => {
 };
 
 export const generate = async () => {
-  const yamlFile = await readFile(
-    path.join(__dirname, "src", "placeholder.yaml")
-  );
+  const yamlFile = await readFile(path.join(__dirname, "src", "fukurou.yaml"));
 
   /** @type {Theme} */
   const base = load(yamlFile, { schema });
