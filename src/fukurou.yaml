@@ -1,6 +1,6 @@
 $schema: vscode://schemas/color-theme
 name: fukurou
-author: TODO
+author: masterodi
 semanticClass: theme.dracula
 semanticHighlighting: true
 fukurou:
@@ -12,10 +12,11 @@ fukurou:
     - &COMMENT "#4b4b4c"
     - &CYAN "#80cfd6"
     - &GREEN "#a4eb9f"
-    - &ORANGE "#f98455"
-    - &PINK "#cc6cf2"
-    - &PURPLE "#9f8af2"
+    - &ORANGE "#f3a485"
+    - &PINK "#deaaf2"
+    - &PURPLE "#a695e6"
     - &RED "#d95679"
+    - &REDDark "#cc335f"
     - &YELLOW "#fade89"
   ansi:
     - &COLOR0 "#21222C"
@@ -485,9 +486,14 @@ tokenColors:
   - name: HTML tags
     scope:
       - entity.name.tag
+    settings:
+      foreground: *REDDark
+
+  - name: Component tags (JSX, Vue, etc.)
+    scope:
       - support.class.component
     settings:
-      foreground: *RED
+      foreground: *REDDark
 
   - name: CSS attribute parent selectors ('&')
     scope:
