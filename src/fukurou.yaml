@@ -319,7 +319,7 @@ colors:
   # Status Bar Colors
   statusBar.background: *BGDarker # Standard Status Bar background color
   statusBar.foreground: *FG # Status Bar foreground color
-  statusBar.debuggingBackground: *RED # Status Bar background color when a program is being debugged
+  statusBar.debuggingBackground: *PURPLE # Status Bar background color when a program is being debugged
   statusBar.debuggingForeground: *BGDarker # Status Bar foreground color when a program is being debugged
   statusBar.noFolderBackground: *BGDarker # Status Bar foreground color when no folder is opened
   statusBar.noFolderForeground: *FG # Status Bar background color when no folder is opened
@@ -814,7 +814,9 @@ tokenColors:
       - variable
       - constant.other.key.perl # Perl edge case
       - support.variable.property # Object properties
+      - variable.other.constant.object
       - variable.other.constant.js # Fix incorrect highlighting of pseudo-constants in js, jsx
+      - variable.other.constant.jsx # Fix incorrect highlighting of pseudo-constants in js, jsx
       - variable.other.constant.ts # Fixes incorrect highlighting of pseudo-constants in ts
       - variable.other.constant.tsx # Fixes incorrect highlighting of pseudo-constants in tsx
     settings:

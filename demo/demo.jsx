@@ -29,3 +29,5 @@ class App extends React.Component {
   }
 }
 export default App;
+
+const x = 1;
