@@ -17,16 +17,14 @@ jobs:
       - run: npm run package
       - uses: softprops/action-gh-release@v2
         id: create_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           draft: true
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
       - uses: softprops/action-gh-release@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./bin/fukurou.vsix
           asset_name: fukurou.vsix
           asset_content_type: application/octet-stream
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
