@@ -10,12 +10,12 @@ placeholder:
     - &BORDER "#141315"
     - &SELECTION "#312e3a"
     - &COMMENT "#4b4b4c"
-    - &CYAN "#6adbe6"
+    - &CYAN "#80cfd6"
     - &GREEN "#a4eb9f"
     - &ORANGE "#f98455"
     - &PINK "#cc6cf2"
     - &PURPLE "#9f8af2"
-    - &RED "#e2466f"
+    - &RED "#d95679"
     - &YELLOW "#fade89"
   ansi:
     - &COLOR0 "#21222C"
@@ -485,6 +485,7 @@ tokenColors:
   - name: HTML tags
     scope:
       - entity.name.tag
+      - support.class.component
     settings:
       foreground: *RED
 
@@ -630,6 +631,7 @@ tokenColors:
       - punctuation.separator.namespace
       - punctuation.separator.pointer-access
       - punctuation.separator.slice
+      - punctuation.separator.period
       - string.unquoted.heredoc punctuation.definition.string
       - support.other.chomping-indicator.yaml
       - punctuation.separator.annotation
