@@ -19,22 +19,23 @@ fukurou:
     - &REDDark "#cc335f"
     - &YELLOW "#fade89"
   ansi:
-    - &COLOR0 "#21222C"
-    - &COLOR1 "#FF5555"
-    - &COLOR2 "#50FA7B"
-    - &COLOR3 "#F1FA8C"
-    - &COLOR4 "#BD93F9"
-    - &COLOR5 "#FF79C6"
-    - &COLOR6 "#8BE9FD"
-    - &COLOR7 "#F8F8F2"
-    - &COLOR8 "#6272A4"
-    - &COLOR9 "#FF6E6E"
-    - &COLOR10 "#69FF94"
-    - &COLOR11 "#FFFFA5"
-    - &COLOR12 "#D6ACFF"
-    - &COLOR13 "#FF92DF"
-    - &COLOR14 "#A4FFFF"
-    - &COLOR15 "#FFFFFF"
+    - &COLOR0 "#21222C" # black
+    - &COLOR1 "#cc335f" #red
+    - &COLOR2 "#a4eb9f" #green
+    - &COLOR3 "#fade89" #yellow
+    - &COLOR4 "#93a9f9" #blue
+    - &COLOR5 "#deaaf2" #magenta
+    - &COLOR6 "#80cfd6" #cyan
+    - &COLOR7 "#b7b7ba" #white
+  brightAnsi:
+    - &COLOR8 "#6272A4" #bright black
+    - &COLOR9 "#d95679" #bright red
+    - &COLOR10 "#c1f1be" #bright green
+    - &COLOR11 "#fae8b1" #bright yellow
+    - &COLOR12 "#afbff9" #bright blue
+    - &COLOR13 "#e3bef2" #bright magenta
+    - &COLOR14 "#a2d2d6" #bright cyan
+    - &COLOR15 "#FFFFFF" #bright white
   brightOther:
     - &TEMP_QUOTES "#E9F284"
     - &TEMP_PROPERTY_QUOTES "#8BE9FE"
@@ -52,14 +53,6 @@ colors:
   # Integrated Terminal Colors
   terminal.background: *BG
   terminal.foreground: *FG
-  terminal.ansiBrightBlack: *COLOR8
-  terminal.ansiBrightRed: *COLOR9
-  terminal.ansiBrightGreen: *COLOR10
-  terminal.ansiBrightYellow: *COLOR11
-  terminal.ansiBrightBlue: *COLOR12
-  terminal.ansiBrightMagenta: *COLOR13
-  terminal.ansiBrightCyan: *COLOR14
-  terminal.ansiBrightWhite: *COLOR15
   terminal.ansiBlack: *COLOR0
   terminal.ansiRed: *COLOR1
   terminal.ansiGreen: *COLOR2
@@ -68,6 +61,14 @@ colors:
   terminal.ansiMagenta: *COLOR5
   terminal.ansiCyan: *COLOR6
   terminal.ansiWhite: *COLOR7
+  terminal.ansiBrightBlack: *COLOR8
+  terminal.ansiBrightRed: *COLOR9
+  terminal.ansiBrightGreen: *COLOR10
+  terminal.ansiBrightYellow: *COLOR11
+  terminal.ansiBrightBlue: *COLOR12
+  terminal.ansiBrightMagenta: *COLOR13
+  terminal.ansiBrightCyan: *COLOR14
+  terminal.ansiBrightWhite: *COLOR15
 
   # Contrast Colors
   contrastBorder: # An extra border around elements to separate them from others for greater contrast
@@ -77,7 +78,7 @@ colors:
   focusBorder: *COMMENT # Overall border color for focused elements. This color is only used if not overridden by a component
   foreground: *FG # Overall foreground color. This color is only used if not overridden by a component
   widget.shadow: # Shadow color of widgets such as Find/Replace inside the editor
-  selection.background: *PURPLE # Background color of text selections in the workbench (for input fields or text areas, does not apply to selections within the editor and the terminal)
+  selection.background: !alpha [*PURPLE, 50] # Background color of text selections in the workbench (for input fields or text areas, does not apply to selections within the editor and the terminal)
   errorForeground: *RED # Overall foreground color for error messages (this color is only used if not overridden by a component)
 
   # Button Control
@@ -130,7 +131,7 @@ colors:
   list.focusBackground: *LineHighlight # List/Tree background color for the focused item when the list/tree is active
   list.highlightForeground: *PURPLE # List/Tree foreground color of the match highlights when searching inside the list/tree
   list.hoverBackground: *LineHighlight # List/Tree background when hovering over items using the mouse
-  list.inactiveSelectionBackground: *LineHighlight # List/Tree background color for the selected item when the list/tree is inactive
+  list.inactiveSelectionBackground: *BGLight # List/Tree background color for the selected item when the list/tree is inactive
   list.inactiveSelectionForeground: # List/Tree foreground color for the selected item when the list/tree is inactive. An active list/tree has keyboard focus, an inactive does not
   list.warningForeground: *ORANGE # Color of warning decorations in the explorer
   list.errorForeground: *RED # Color of error decorations in the explorer
@@ -144,7 +145,7 @@ colors:
   activityBar.foreground: *FG # Activity bar foreground color (for example used for the icons)
   activityBar.border: # Activity Bar border color with the Side Bar
   activityBar.activeBorder: !alpha [*PURPLE, 80] # Activity Bar indicator color
-  activityBar.activeBackground: !alpha [*PURPLE, 10] # Activity Bar indicator background color
+  activityBar.activeBackground: # Activity Bar indicator background color
   activityBarBadge.background: *PURPLE # Activity notification badge background color
   activityBarBadge.foreground: *WHITE # Activity notification badge foreground color
 
@@ -186,14 +187,14 @@ colors:
   editor.inactiveSelectionBackground: # Color of the selection in an inactive editor
   editor.foldBackground: !alpha [*BGDark, 80] # Background color for folded ranges
 
-  editor.wordHighlightBackground: !alpha [*CYAN, 50] # Background color of a symbol during read-access, for example when reading a variable
-  editor.wordHighlightStrongBackground: !alpha [*GREEN, 50] # Background color of a symbol during write-access, for example when writing to a variable
+  editor.wordHighlightBackground: !alpha [*CYAN, 10] # Background color of a symbol during read-access, for example when reading a variable
+  editor.wordHighlightStrongBackground: !alpha [*GREEN, 10] # Background color of a symbol during write-access, for example when writing to a variable
 
-  editor.findMatchBackground: !alpha [*PURPLE, 60]
-  editor.findMatchHighlightBackground: !alpha [*WHITE, 40] # Color of the other search matches
+  editor.findMatchBackground: !alpha [*PURPLE, 10]
+  editor.findMatchHighlightBackground: !alpha [*WHITE, 10] # Color of the other search matches
   editor.findRangeHighlightBackground: *LineHighlight # Color the range limiting the search
 
-  editor.hoverHighlightBackground: !alpha [*CYAN, 50] # Highlight below the word for which a hover is shown
+  editor.hoverHighlightBackground: !alpha [*CYAN, 10] # Highlight below the word for which a hover is shown
 
   editor.lineHighlightBackground: *BGLight # Background color for the highlight of line at the cursor position
   editor.lineHighlightBorder: # Background color for the border around the line at the cursor position
