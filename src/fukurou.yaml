@@ -7,6 +7,7 @@ fukurou:
   base:
     - &BG "#211f23"
     - &FG "#b7b7ba"
+    - &FGLight "#d4d4d8"
     - &BORDER "#141315"
     - &SELECTION "#312e3a"
     - &COMMENT "#4b4b4c"
@@ -819,8 +820,9 @@ tokenColors:
       - variable.other.constant.jsx # Fix incorrect highlighting of pseudo-constants in js, jsx
       - variable.other.constant.ts # Fixes incorrect highlighting of pseudo-constants in ts
       - variable.other.constant.tsx # Fixes incorrect highlighting of pseudo-constants in tsx
+      - entity.name.variable
     settings:
-      foreground: *FG
+      foreground: *FGLight
 
   - name: Destructuring / aliasing reference name (LHS)
     scope:
