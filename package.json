@@ -2,7 +2,7 @@
   "name": "fukurou",
   "displayName": "fukurou",
   "description": "",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "publisher": "masterodi",
   "engines": {
     "vscode": "^1.106.1"
