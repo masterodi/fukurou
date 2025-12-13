@@ -1,7 +1,6 @@
 import { readFile } from "fs/promises";
 import { DEFAULT_SCHEMA, load, Type } from "js-yaml";
 import path from "path";
-import tinycolor from "tinycolor2";
 
 const __dirname = path.resolve();
 
@@ -32,33 +31,6 @@ const withAlphaType = new Type("!alpha", {
 
 const schema = DEFAULT_SCHEMA.extend([withAlphaType]);
 
-/**
- * Soft variant transform.
- * @type {ThemeTransform}
- */
-// eslint-disable-next-line no-unused-vars
-const transformSoft = (theme) => {
-  /** @type {Theme} */
-  const soft = JSON.parse(JSON.stringify(theme));
-  const brightColors = [...soft.dracula.ansi, ...soft.dracula.brightOther];
-  for (const key of Object.keys(soft.colors)) {
-    if (brightColors.includes(soft.colors[key])) {
-      soft.colors[key] = tinycolor(soft.colors[key])
-        .desaturate(20)
-        .toHexString();
-    }
-  }
-  soft.tokenColors = soft.tokenColors.map((value) => {
-    if (brightColors.includes(value.settings.foreground)) {
-      value.settings.foreground = tinycolor(value.settings.foreground)
-        .desaturate(20)
-        .toHexString();
-    }
-    return value;
-  });
-  return soft;
-};
-
 export const generate = async () => {
   const yamlFile = await readFile(path.join(__dirname, "src", "fukurou.yaml"));
 
@@ -71,5 +43,18 @@ export const generate = async () => {
     }
   }
 
-  return { base };
+  const yamlFile2 = await readFile(
+    path.join(__dirname, "src", "fukurou-alt.yaml")
+  );
+
+  /** @type {Theme} */
+  const alt = load(yamlFile2, { schema });
+
+  for (const key of Object.keys(alt.colors)) {
+    if (!alt.colors[key]) {
+      delete alt.colors[key];
+    }
+  }
+
+  return { base, alt };
 };

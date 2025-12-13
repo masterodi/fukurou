@@ -1,23 +1,25 @@
 $schema: vscode://schemas/color-theme
-name: fukurou
+name: fukurou alt
 author: masterodi
 semanticHighlighting: true
 fukurou:
   base:
-    - &BG "#211f23"
-    - &FG "#b7b7ba"
-    - &FGLight "#d4d4d8"
+    - &BG "#1e1f2b"
+    - &FG "#cbd3d3"
+    - &FGLight "#e3ecec"
     - &BORDER "#141315"
     - &SELECTION "#312e3a"
-    - &COMMENT "#4b4b4c"
+    - &COMMENT "#797d85"
     - &CYAN "#80cfd6"
-    - &GREEN "#a4eb9f"
+    - &GREEN "#73d0d0"
     - &ORANGE "#f3a485"
     - &PINK "#deaaf2"
-    - &PURPLE "#a695e6"
+    - &PURPLE "#c3b3ff"
     - &RED "#d95679"
     - &REDDark "#cc335f"
     - &YELLOW "#fade89"
+    - &MINT "#9affdc"
+    - &BLUEBAY "#a9b8f3"
   ansi:
     - &COLOR0 "#21222C" # black
     - &COLOR1 "#cc335f" #red
@@ -36,18 +38,15 @@ fukurou:
     - &COLOR13 "#e3bef2" #bright magenta
     - &COLOR14 "#a2d2d6" #bright cyan
     - &COLOR15 "#FFFFFF" #bright white
-  brightOther:
-    - &TEMP_QUOTES "#E9F284"
-    - &TEMP_PROPERTY_QUOTES "#8BE9FE"
   other:
-    - &LineHighlight "#44475A75"
+    - &LineHighlight "#42435d75"
     - &NonText "#FFFFFF1A"
     - &WHITE "#FFFFFF"
     - &TAB_DROP_BG "#44475A70"
-    - &BGLighter "#332f36"
-    - &BGLight "#28252a"
-    - &BGDark "#19171a"
-    - &BGDarker "#131315"
+    - &BGLighter "#303144"
+    - &BGLight "#282939"
+    - &BGDark "#181720"
+    - &BGDarker "#111319"
 
 colors:
   # Integrated Terminal Colors
@@ -399,7 +398,7 @@ tokenColors:
       - entity.name.type.class
       - entity.name.class
     settings:
-      foreground: *CYAN
+      foreground: *BLUEBAY
       fontStyle: normal
 
   - name: this, super, self, etc.
@@ -419,7 +418,7 @@ tokenColors:
       - entity.other.inherited-class
     settings:
       fontStyle: italic
-      foreground: *CYAN
+      foreground: *BLUEBAY
 
   # =============================================================================
   # Comments
@@ -588,7 +587,7 @@ tokenColors:
       - support
     settings:
       fontStyle: italic
-      foreground: *CYAN
+      foreground: *BLUEBAY
 
   - name: Language Built-ins Constants
     scope:
@@ -754,7 +753,7 @@ tokenColors:
       - storage.type.ocaml
     settings:
       fontStyle: italic
-      foreground: *CYAN
+      foreground: *BLUEBAY
 
   - name: Generics, templates, and mapped type declarations
     scope:
@@ -778,24 +777,7 @@ tokenColors:
     scope:
       - string
     settings:
-      foreground: *YELLOW
-
-  - name: String quotes (temporary vscode fix)
-    scope:
-      # NOTE: This is a temporary fix for VSCode expand selection.
-      # See (https://github.com/Microsoft/vscode/issues/4795)
-      - punctuation.definition.string.begin
-      - punctuation.definition.string.end
-    settings:
-      foreground: *TEMP_QUOTES
-
-  - name: Property quotes (temporary vscode fix)
-    scope:
-      # NOTE: Same as above
-      - punctuation.support.type.property-name.begin
-      - punctuation.support.type.property-name.end
-    settings:
-      foreground: *TEMP_PROPERTY_QUOTES
+      foreground: *MINT
 
   - name: Docstrings
     scope:

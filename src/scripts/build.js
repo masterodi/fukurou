@@ -11,12 +11,16 @@ if (!fs.existsSync(THEMES_DIR)) {
 }
 
 const build = async () => {
-  const { base } = await generate();
+  const { base, alt } = await generate();
 
   return Promise.all([
     fs.promises.writeFile(
       path.join(THEMES_DIR, "fukurou.json"),
       JSON.stringify(base, null, 4)
+    ),
+    fs.promises.writeFile(
+      path.join(THEMES_DIR, "fukurou-alt.json"),
+      JSON.stringify(alt, null, 4)
     ),
   ]);
 };

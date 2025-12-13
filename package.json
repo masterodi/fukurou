@@ -2,7 +2,7 @@
   "name": "fukurou",
   "displayName": "fukurou",
   "description": "",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "publisher": "masterodi",
   "engines": {
     "vscode": "^1.106.1"
@@ -23,6 +23,11 @@
         "label": "fukurou",
         "uiTheme": "vs-dark",
         "path": "./themes/fukurou.json"
+      },
+      {
+        "label": "fukurou alt",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fukurou-alt.json"
       }
     ]
   },
